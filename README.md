@@ -2,7 +2,7 @@
 A simple calculator website built using HTML, CSS, and JavaScript.
 
 
-##Features
+## Features
 - Addition
 - Subtraction
 - Multiplication
