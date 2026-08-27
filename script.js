@@ -6,9 +6,14 @@ let firstNumber = "";
 let operator = "";
 let secondNumber = "";
 
+
+
+
 buttons.forEach(button => {
-    button.addEventListener("click", () => {
+ button.addEventListener("click", () => {
     const value = button.textContent;
+
+   
 
  // Numbers and decimal point
  if (!isNaN(value) || value === ".") {
@@ -76,4 +81,51 @@ buttons.forEach(button => {
         }
 
     });
+});
+
+ // Keyboard Support
+document.addEventListener("keydown", (event) => {
+
+    let key = event.key;
+// Keyboard special keys
+    if (key === "Enter") {
+        key = "=";
+    }
+    else if (key === "Backspace") {
+        key = "X";
+    }
+    else if (key === "Escape") {
+        key = "C";
+    }
+ // Keyboard symbols
+    else if (key === "+") {
+        key = "+";
+    }
+    else if (key === "-") {
+        key = "-";
+    }
+    else if (key === "*") {
+        key = "*";
+    }
+    else if (key === "/") {
+        key = "/";
+    }
+    else if (key === "%") {
+        key = "%";
+    }
+    else if (key === ".") {
+        key = ".";
+    }
+    else if (key === "x" || key === "X") {
+        key = "X";
+    }
+
+    buttons.forEach(button => {
+
+        if (button.textContent.trim() === key) {
+            button.click();
+        }
+
+    });
+
 });
